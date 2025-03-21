@@ -1,0 +1,18 @@
+workflows:
+  cross-platform:
+    name: Flutter Build
+    cache:
+      cache_paths:
+        # Flutter/Dart
+        - ~/.pub-cache
+        - ~/flutter/.pub-cache
+        # Android
+        - ~/.gradle/caches
+        - ~/.gradle/wrapper
+        - ~/.android/build-cache
+        # iOS
+        - ~/.cocoapods
+        - Pods/
+        - ~/.gem
+      fingerprint_script:
+        - find . -name "pubspec.lock" -o -name "Podfile.lock" | xargs md5sum

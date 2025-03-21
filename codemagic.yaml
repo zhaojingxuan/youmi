@@ -14,5 +14,3 @@ workflows:
         - ~/.cocoapods
         - Pods/
         - ~/.gem
-      fingerprint_script:
-        - find . -name "pubspec.lock" -o -name "Podfile.lock" | xargs md5sum

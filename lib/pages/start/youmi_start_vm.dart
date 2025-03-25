@@ -74,8 +74,6 @@ class YoumiStartVm with ChangeNotifier {
     userActivationRequest['sign'] = StringUtils.signData(userActivationRequest,
         '7ee6435d86e82eca1046eea5a81a6c1d1919ad88c3669e7adbbb3a608f6cfd42');
 
-    showToast('userActivationRequest：${userActivationRequest['sign']}');
-
     UserActivationModel userActivationModel =
         await Api.instance.userActivation(userActivationRequest);
 

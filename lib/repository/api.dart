@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:oktoast/oktoast.dart';
 import 'package:youmi/http/dio_instance.dart';
 import 'package:youmi/repository/models/drama_data/drama_data.dart';
 import 'package:youmi/repository/models/drama_list/drama_list.dart';
@@ -24,8 +25,10 @@ class Api {
 
   ///激活账号
   Future<UserActivationModel> userActivation(Object req) async {
+    showToast('激活账号 before');
     Response response = await DioInstance.instance()
         .post(path: "api/v1/user/activation", data: req);
+    showToast('激活账号 after');
     var model = UserActivationModel.fromJson(response.data);
     return model;
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oktoast/oktoast.dart';
 import 'package:uuid/uuid.dart';
 import 'package:youmi/global/global_info.dart';
 import 'package:youmi/global/models/user_info.dart';
@@ -24,6 +25,7 @@ class YoumiStartVm with ChangeNotifier {
   }
 
   Future userActivation() async {
+    showToast('userActivation');
     // 获取当前系统的 Locale 信息
     final locale = WidgetsBinding.instance.platformDispatcher.locale;
     // 从 Locale 中提取国家代码
@@ -46,11 +48,13 @@ class YoumiStartVm with ChangeNotifier {
     // debugPrint(
     //     'deviceInfo： fingerprint：${StringUtils.toMd5(deviceInfo["fingerprint"])}');
 
+    showToast(deviceInfo["platform"] == 1 ? 'android' : 'ios');
     var rbstdc = '';
     if (deviceInfo["platform"] == 1) {
       rbstdc = StringUtils.str2base64(
           '${(deviceInfo["id"])},${((uuidV1 ?? ''))},${((deviceInfo["fingerprint"]))}');
     } else {
+      showToast('${deviceInfo["identifierForVendor"]}');
       rbstdc = StringUtils.str2base64('${deviceInfo["identifierForVendor"]}');
     }
     debugPrint('deviceInfo： rbstdc：$rbstdc:${deviceInfo["platform"]}');

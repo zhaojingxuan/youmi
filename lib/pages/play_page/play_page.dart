@@ -85,11 +85,14 @@ class _PlayPageState extends State<PlayPage> {
                     children: [
                       if (!StringUtils.isEmpty(picUrl) &&
                           !StringUtils.isEmpty(heroKeyTag))
+                        // hero 动画效果
                         Opacity(
                             opacity: listDrama.isNotEmpty ? 0 : 1,
                             child: VideoPlayerScreen(
                               videoItemInfoT: VideoItemInfoT(
-                                  picUrl: picUrl!, heroKeyTag: heroKeyTag),
+                                  picUrl: picUrl!,
+                                  heroKeyTag: heroKeyTag,
+                                  forHero: true),
                             )),
                       if (listDrama.isNotEmpty)
                         Swiper(

@@ -102,7 +102,9 @@ class VideoPlayerScreenState extends State<VideoPlayerScreen> with RouteAware {
           (!globalVm.automaticRelease || !await doDramaUnLock())) {
         return;
       }
-      initControllerAndVm();
+      if (videoItemInfoT.forHero != true) {
+        initControllerAndVm();
+      }
     });
   }
 

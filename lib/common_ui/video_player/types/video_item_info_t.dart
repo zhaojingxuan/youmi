@@ -1,11 +1,13 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'video_item_info_t.g.dart';
+// flutter pub run build_runner build
 
 @CopyWith(copyWithNull: true)
 class VideoItemInfoT {
   final String picUrl;
   final String? heroKeyTag;
+  final bool? forHero;
   final int? dramaId;
   final int? epId;
   final String? dramaName;
@@ -22,6 +24,7 @@ class VideoItemInfoT {
   VideoItemInfoT({
     required this.picUrl,
     this.heroKeyTag,
+    this.forHero,
     this.dramaId,
     this.epId,
     this.dramaName,
@@ -43,6 +46,7 @@ class VideoItemInfoT {
     return other is VideoItemInfoT &&
         other.picUrl == picUrl &&
         other.heroKeyTag == heroKeyTag &&
+        other.forHero == forHero &&
         other.dramaId == dramaId &&
         other.epId == epId &&
         other.dramaName == dramaName &&
@@ -62,6 +66,7 @@ class VideoItemInfoT {
   int get hashCode =>
       picUrl.hashCode ^
       heroKeyTag.hashCode ^
+      forHero.hashCode ^
       dramaId.hashCode ^
       epId.hashCode ^
       dramaName.hashCode ^

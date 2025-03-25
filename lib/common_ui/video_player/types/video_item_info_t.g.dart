@@ -11,6 +11,8 @@ abstract class _$VideoItemInfoTCWProxy {
 
   VideoItemInfoT heroKeyTag(String? heroKeyTag);
 
+  VideoItemInfoT forHero(bool? forHero);
+
   VideoItemInfoT dramaId(int? dramaId);
 
   VideoItemInfoT epId(int? epId);
@@ -44,6 +46,7 @@ abstract class _$VideoItemInfoTCWProxy {
   VideoItemInfoT call({
     String picUrl,
     String? heroKeyTag,
+    bool? forHero,
     int? dramaId,
     int? epId,
     String? dramaName,
@@ -70,6 +73,9 @@ class _$VideoItemInfoTCWProxyImpl implements _$VideoItemInfoTCWProxy {
 
   @override
   VideoItemInfoT heroKeyTag(String? heroKeyTag) => this(heroKeyTag: heroKeyTag);
+
+  @override
+  VideoItemInfoT forHero(bool? forHero) => this(forHero: forHero);
 
   @override
   VideoItemInfoT dramaId(int? dramaId) => this(dramaId: dramaId);
@@ -120,6 +126,7 @@ class _$VideoItemInfoTCWProxyImpl implements _$VideoItemInfoTCWProxy {
   VideoItemInfoT call({
     Object? picUrl = const $CopyWithPlaceholder(),
     Object? heroKeyTag = const $CopyWithPlaceholder(),
+    Object? forHero = const $CopyWithPlaceholder(),
     Object? dramaId = const $CopyWithPlaceholder(),
     Object? epId = const $CopyWithPlaceholder(),
     Object? dramaName = const $CopyWithPlaceholder(),
@@ -142,6 +149,10 @@ class _$VideoItemInfoTCWProxyImpl implements _$VideoItemInfoTCWProxy {
           ? _value.heroKeyTag
           // ignore: cast_nullable_to_non_nullable
           : heroKeyTag as String?,
+      forHero: forHero == const $CopyWithPlaceholder()
+          ? _value.forHero
+          // ignore: cast_nullable_to_non_nullable
+          : forHero as bool?,
       dramaId: dramaId == const $CopyWithPlaceholder()
           ? _value.dramaId
           // ignore: cast_nullable_to_non_nullable
@@ -207,6 +218,7 @@ extension $VideoItemInfoTCopyWith on VideoItemInfoT {
   /// ````
   VideoItemInfoT copyWithNull({
     bool heroKeyTag = false,
+    bool forHero = false,
     bool dramaId = false,
     bool epId = false,
     bool dramaName = false,
@@ -223,6 +235,7 @@ extension $VideoItemInfoTCopyWith on VideoItemInfoT {
     return VideoItemInfoT(
       picUrl: picUrl,
       heroKeyTag: heroKeyTag == true ? null : this.heroKeyTag,
+      forHero: forHero == true ? null : this.forHero,
       dramaId: dramaId == true ? null : this.dramaId,
       epId: epId == true ? null : this.epId,
       dramaName: dramaName == true ? null : this.dramaName,

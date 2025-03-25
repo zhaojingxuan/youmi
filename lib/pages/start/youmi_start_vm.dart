@@ -56,6 +56,9 @@ class YoumiStartVm with ChangeNotifier {
     }
     debugPrint('deviceInfo： rbstdc：$rbstdc:${deviceInfo["platform"]}');
 
+    showToast('deviceInfo: ${deviceInfo.toString()}');
+    await Future.delayed(Duration(seconds: 6));
+
     var userActivationRequest = {
       "device_brand": deviceInfo["brand"],
       "country_code": countryCode,

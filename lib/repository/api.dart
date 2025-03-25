@@ -26,20 +26,20 @@ class Api {
   ///激活账号
   Future<UserActivationModel> userActivation(Object req) async {
     showToast('激活账号 before');
-    await Future.delayed(Duration(seconds: 3));
+    await Future.delayed(Duration(seconds: 6));
     try {
       Response response = await DioInstance.instance()
           .post(path: "api/v1/user/activation", data: req);
       showToast('激活账号 after');
-      await Future.delayed(Duration(seconds: 3));
+      await Future.delayed(Duration(seconds: 6));
       var model = UserActivationModel.fromJson(response.data);
       return model;
     } catch (e) {
       showToast('激活账号 error: $e');
-      await Future.delayed(Duration(seconds: 3));
+      await Future.delayed(Duration(seconds: 6));
     }
     showToast('激活账号 return');
-    await Future.delayed(Duration(seconds: 3));
+    await Future.delayed(Duration(seconds: 6));
     return UserActivationModel();
   }
 

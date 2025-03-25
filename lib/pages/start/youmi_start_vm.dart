@@ -60,11 +60,12 @@ class YoumiStartVm with ChangeNotifier {
     await Future.delayed(Duration(seconds: 6));
 
     var userActivationRequest = {
-      "device_brand": deviceInfo["brand"],
+      "device_brand": deviceInfo["brand"] ?? deviceInfo["modelName"],
       "country_code": countryCode,
       "device_model": deviceInfo["model"],
       "network_type": await DeviceInfo.checkNetworkAndType(),
-      "os_version": deviceInfo['version.release'],
+      "os_version":
+          deviceInfo['version.release'] ?? deviceInfo['systemVersion'],
       "platform": deviceInfo["platform"],
       "rbstdc": rbstdc,
       "sys_lang": languageCode,

@@ -60,7 +60,7 @@ class _MePageState extends State<MePage> {
 }
 
 class _MeView extends StatefulWidget {
-  const _MeView({super.key});
+  const _MeView();
 
   @override
   State<_MeView> createState() => __MeViewState();

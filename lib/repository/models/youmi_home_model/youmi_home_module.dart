@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart';
-
 import 'module_list_item_model.dart';
 
 class YoumiHomeModule {

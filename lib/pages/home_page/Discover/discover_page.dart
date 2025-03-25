@@ -33,7 +33,6 @@ class _DiscoverPageState extends State<DiscoverPage> {
   DiscoverVm discoverVm = DiscoverVm();
 
   late ScrollController _scrollController;
-  bool _showScrollToTopButton = false;
 
   @override
   void initState() {

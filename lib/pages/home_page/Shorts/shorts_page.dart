@@ -80,8 +80,6 @@ class _VideoView extends StatefulWidget {
 class __VideoViewState extends State<_VideoView> {
   // PageController 用于控制 PageView 的滑动
   final SwiperController _swiperController = SwiperController();
-  // 当前显示视频的索引
-  int _currentIndex = 0;
 
   @override
   void initState() {
@@ -108,7 +106,7 @@ class __VideoViewState extends State<_VideoView> {
             scrollDirection: Axis.vertical, // 设置滚动方向为垂直
             itemCount: listSale.length, // 轮播项的数量
             onIndexChanged: (value) {
-              _currentIndex = value;
+              // _currentIndex = value;
             },
             itemBuilder: (context, index) {
               return VideoPlayerScreen(

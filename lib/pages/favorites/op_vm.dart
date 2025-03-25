@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:youmi/repository/api.dart';
-import 'package:youmi/repository/models/history_list/history.dart';
 import 'package:youmi/repository/models/op_action_list/action_datum.dart';
 
 class OpVm with ChangeNotifier {

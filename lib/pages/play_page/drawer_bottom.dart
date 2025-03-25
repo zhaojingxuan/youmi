@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:youmi/pages/play_page/audio_wave_animation.dart';
-import 'package:youmi/pages/play_page/play_page_vm.dart';
 import 'package:youmi/repository/models/drama_list/drama_item.dart';
 
 class DrawerBottom extends StatefulWidget {

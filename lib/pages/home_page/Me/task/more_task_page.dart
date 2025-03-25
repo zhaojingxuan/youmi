@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:youmi/generated/l10n.dart';
 import 'package:youmi/pages/home_page/Me/me_vm.dart';
 import 'package:youmi/pages/home_page/Me/task/task_list/task_list_item.dart';
 import 'package:youmi/repository/models/vip_task_list/task_item.dart';

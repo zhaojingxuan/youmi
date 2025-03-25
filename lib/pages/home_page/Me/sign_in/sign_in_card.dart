@@ -42,14 +42,14 @@ class _SignInCardState extends State<SignInCard> {
                     padding: EdgeInsets.only(
                         top: 5.w, right: 6.w, left: 6.w, bottom: 8.w),
                     decoration: BoxDecoration(
-                      color: ((storeSignIn?.isSignIn ?? false) ||
+                      color: ((storeSignIn.isSignIn ?? false) ||
                               beforeDData?.type == 0 ||
                               dData.type == 1)
                           ? (dData.type == 0
                               ? Color.fromRGBO(29, 29, 39, 1)
                               : Color(0xFF2B2B36))
                           : null,
-                      gradient: ((storeSignIn?.isSignIn ?? false) ||
+                      gradient: ((storeSignIn.isSignIn ?? false) ||
                               beforeDData?.type == 0 ||
                               dData.type == 1)
                           ? null

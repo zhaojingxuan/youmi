@@ -5,7 +5,6 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:youmi/common_ui/smart_refresh/smart_refresh_widget.dart';
 import 'package:youmi/common_ui/youmi_postar/youmi_poster.dart';
 import 'package:youmi/pages/favorites/op_vm.dart';
-import 'package:youmi/pages/home_page/Discover/discover_vm.dart';
 import 'package:youmi/repository/models/op_action_list/action_datum.dart';
 import 'package:youmi/route/route_utils.dart';
 import 'package:youmi/route/routes.dart';
@@ -83,7 +82,7 @@ class _LikePageState extends State<LikePage> {
       return GestureDetector(
           onTap: () {
             RouteUtils.pushForNamed(context, RoutePath.playPage, arguments: {
-              "dramaId": actionDatum?.dramaId,
+              "dramaId": actionDatum.dramaId,
               "picUrl": actionDatum.dramaUrl ?? '',
               "heroKeyTag": heroKeyTag,
             });

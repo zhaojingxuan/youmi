@@ -78,7 +78,7 @@ class _VipTaskState extends State<VipTask> with RouteAware {
                     children: [
                       vipTaskList.dayList?.isNotEmpty ?? false
                           ? TaskListBox(
-                              taskItemList: vipTaskList!.dayList!,
+                              taskItemList: vipTaskList.dayList!,
                               title: S.of(context).daily_task,
                               type: 'dayList',
                             )
@@ -90,7 +90,7 @@ class _VipTaskState extends State<VipTask> with RouteAware {
                               type: 'toDoList',
                             )
                           : SizedBox.shrink(),
-                      vipTaskList?.share != null
+                      vipTaskList.share != null
                           ? TaskListBox(
                               taskItemList: [vipTaskList.share!],
                               title: vipTaskList.share!.taskName!,

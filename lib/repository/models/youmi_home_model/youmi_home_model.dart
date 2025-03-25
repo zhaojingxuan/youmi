@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 import 'youmi_banner.dart';
 import 'youmi_home_module.dart';
 

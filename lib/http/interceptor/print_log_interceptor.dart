@@ -37,7 +37,6 @@ class PrintLogInterceptor extends Interceptor {
     } catch (e) {
       debugPrint("data:${response.data}");
     }
-    showToast("response:${response.data.toString()}");
     debugPrint("<--------------response\n");
     super.onResponse(response, handler);
   }

@@ -40,7 +40,7 @@ class _DrawerBottomState extends State<DrawerBottom>
   Widget build(BuildContext context) {
     return Container(
         height: 416.w,
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 0.w),
+        padding: EdgeInsets.symmetric(vertical: 0.w),
         decoration: BoxDecoration(
           // 设置背景颜色
           color: const Color.fromRGBO(29, 29, 39, 1),
@@ -60,46 +60,56 @@ class _DrawerBottomState extends State<DrawerBottom>
           style: TextStyle(fontSize: 14.sp, color: Colors.white),
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    "Anthology List",
-                    style: TextStyle(fontSize: 18.sp),
-                  ),
-                  IconButton(
-                      onPressed: () => Navigator.pop(context),
-                      icon: Icon(
-                        Icons.clear_rounded,
-                        color: Colors.white,
-                      ))
-                ],
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 16.w,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Anthology List",
+                      style: TextStyle(fontSize: 18.sp),
+                    ),
+                    IconButton(
+                        onPressed: () => Navigator.pop(context),
+                        icon: Icon(
+                          Icons.clear_rounded,
+                          color: Colors.white,
+                        ))
+                  ],
+                ),
               ),
               SizedBox(
                 height: 3.w,
               ),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: SizedBox(
-                  width: size * 70.w,
-                  child: TabBar(
-                      controller: _tabController,
-                      labelColor: Color.fromRGBO(255, 45, 111, 1),
-                      unselectedLabelColor: Colors.white,
-                      // indicatorSize: TabBarIndicatorSize.tab,
-                      indicatorColor: Color.fromRGBO(255, 45, 111, 1),
-                      tabs: [
-                        for (int i = 0;
-                            i < (listDrama.length / 30).ceilToDouble();
-                            i++)
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 8),
-                            child: Text(
-                              '${i * 30 + 1}-${min(listDrama.length, (i + 1) * 30)}',
-                            ),
-                          )
-                      ]),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 16.w,
+                ),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: SizedBox(
+                    width: size * 70.w,
+                    child: TabBar(
+                        controller: _tabController,
+                        labelColor: Color.fromRGBO(255, 45, 111, 1),
+                        unselectedLabelColor: Colors.white,
+                        // indicatorSize: TabBarIndicatorSize.tab,
+                        indicatorColor: Color.fromRGBO(255, 45, 111, 1),
+                        tabs: [
+                          for (int i = 0;
+                              i < (listDrama.length / 30).ceilToDouble();
+                              i++)
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 8),
+                              child: Text(
+                                '${i * 30 + 1}-${min(listDrama.length, (i + 1) * 30)}',
+                              ),
+                            )
+                        ]),
+                  ),
                 ),
               ),
               SizedBox(
@@ -109,7 +119,7 @@ class _DrawerBottomState extends State<DrawerBottom>
                 child: TabBarView(controller: _tabController, children: [
                   for (int sizei = 0; sizei < size; sizei++)
                     Wrap(
-                      alignment: WrapAlignment.start,
+                      alignment: WrapAlignment.center,
                       runSpacing: 11.w,
                       spacing: 13.w,
                       children: [

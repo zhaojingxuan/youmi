@@ -95,7 +95,10 @@ class _MoreTaskPageState extends State<MoreTaskPage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               for (int i = 0; i < taskItemList.length; i++)
-                                TaskListItem(item: taskItemList[i], index: i),
+                                TaskListItem(
+                                    key: ValueKey(taskItemList[i].id),
+                                    item: taskItemList[i],
+                                    index: i),
                             ],
                           );
                         },

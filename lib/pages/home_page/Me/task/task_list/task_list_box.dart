@@ -70,7 +70,10 @@ class _TaskListBoxState extends State<TaskListBox> {
                               TextStyle(fontSize: 16.sp, color: Colors.white)),
                     ))),
             for (int i = 0; i < min(2, taskItemList.length); i++)
-              TaskListItem(item: taskItemList[i], index: i),
+              TaskListItem(
+                  key: ValueKey(taskItemList[i].id),
+                  item: taskItemList[i],
+                  index: i),
             if (taskItemList.length > 2) _more(),
           ],
         ));

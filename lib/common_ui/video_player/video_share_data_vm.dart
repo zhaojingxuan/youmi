@@ -122,6 +122,7 @@ class VideoShareDataVm with ChangeNotifier {
         ItemSale(dramaId: videoItemInfoT?.dramaId, epId: videoItemInfoT?.epId),
         type,
         action)) {
+      print("操作失败");
       switch (type) {
         case 0:
           if (action == 1) {

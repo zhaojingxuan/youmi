@@ -24,6 +24,8 @@ class ResponseInterceptor extends Interceptor {
           showToast("请先登录");
         } else {
           showToast(rsp.message ?? '网络错误');
+          handler.next(Response(
+              requestOptions: response.requestOptions, data: rsp.data));
         }
       } catch (e) {
         handler.reject(DioException(

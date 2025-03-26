@@ -109,7 +109,7 @@ class _SettingAboutState extends State<SettingAbout>
       body: SafeArea(
           child: Container(
               margin: EdgeInsets.only(top: 16.w),
-              padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 10.w),
+              padding: EdgeInsets.only(bottom: 10.w),
               child: DefaultTextStyle(
                   style: TextStyle(
                       color: Colors.white, fontSize: 16.sp, height: 1.4),
@@ -122,7 +122,8 @@ class _SettingAboutState extends State<SettingAbout>
                         itemCount: docPrivacyPolicy.length,
                         itemBuilder: (context, index) {
                           return Padding(
-                              padding: EdgeInsets.only(bottom: 12.w),
+                              padding: EdgeInsets.only(
+                                  left: 20.w, right: 20.w, bottom: 12.w),
                               child: Text(docPrivacyPolicy[index]));
                         },
                       ),
@@ -131,7 +132,8 @@ class _SettingAboutState extends State<SettingAbout>
                         itemCount: docServiceTerms.length,
                         itemBuilder: (context, index) {
                           return Padding(
-                              padding: EdgeInsets.only(bottom: 12.w),
+                              padding: EdgeInsets.only(
+                                  left: 20.w, right: 20.w, bottom: 12.w),
                               child: Text(docServiceTerms[index]));
                         },
                       ),

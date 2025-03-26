@@ -89,6 +89,7 @@ class YoumiApp extends StatelessWidget {
                             ColorScheme.fromSeed(seedColor: Colors.deepPurple),
                         useMaterial3: true,
                         fontFamily: 'Montserrat',
+                        platform: TargetPlatform.iOS,
                       ),
                       // 来实现动态路由生成
                       onGenerateRoute: Routes.generateRoute,

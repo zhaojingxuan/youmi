@@ -66,7 +66,7 @@ class Api {
       "type": type,
       "action": action
     });
-    return response.data[0] as bool;
+    return response.data[0] == false ? false : true;
   }
 
   ///用户详情

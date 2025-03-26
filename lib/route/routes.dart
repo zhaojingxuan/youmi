@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:youmi/pages/favorites/favorites_page.dart';
 import 'package:youmi/pages/history/history_page.dart';
@@ -81,10 +82,22 @@ class Routes {
           var tween =
               Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 
-          return SlideTransition(
-            position: animation.drive(tween),
-            child: child,
-          );
+          // return SlideTransition(
+          //   position: animation.drive(tween),
+          //   child: child,
+          // );
+
+          return settings.name == RoutePath.youmitab
+              ? SlideTransition(
+                  position: animation.drive(tween),
+                  child: child,
+                )
+              : CupertinoPageTransition(
+                  primaryRouteAnimation: animation,
+                  secondaryRouteAnimation: secondaryAnimation,
+                  linearTransition: true,
+                  child: child,
+                );
         },
       );
     }

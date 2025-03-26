@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:oktoast/oktoast.dart';
 import 'package:uuid/uuid.dart';
 import 'package:youmi/global/global_info.dart';
 import 'package:youmi/global/models/user_info.dart';

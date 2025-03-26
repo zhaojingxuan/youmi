@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:oktoast/oktoast.dart';
 import 'package:youmi/http/dio_instance.dart';
 import 'package:youmi/repository/models/drama_data/drama_data.dart';
 import 'package:youmi/repository/models/drama_list/drama_list.dart';

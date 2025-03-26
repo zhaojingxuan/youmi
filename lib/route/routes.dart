@@ -75,29 +75,29 @@ class Routes {
           // 创建滑动动画
           var begin = const Offset(1.0, 0.0); // 从右往左进入
           if (settings.name == RoutePath.youmitab) {
-            begin = const Offset(0.0, 1.0); // 从下往上进入
+            begin = const Offset(-1.0, 0.0); // 从下往上进入
           }
           var end = Offset.zero;
           var curve = Curves.easeInOut;
           var tween =
               Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 
-          // return SlideTransition(
-          //   position: animation.drive(tween),
-          //   child: child,
-          // );
+          return SlideTransition(
+            position: animation.drive(tween),
+            child: child,
+          );
 
-          return settings.name == RoutePath.youmitab
-              ? SlideTransition(
-                  position: animation.drive(tween),
-                  child: child,
-                )
-              : CupertinoPageTransition(
-                  primaryRouteAnimation: animation,
-                  secondaryRouteAnimation: secondaryAnimation,
-                  linearTransition: true,
-                  child: child,
-                );
+          // return settings.name == RoutePath.youmitab
+          //     ? SlideTransition(
+          //         position: animation.drive(tween),
+          //         child: child,
+          //       )
+          //     : CupertinoPageTransition(
+          //         primaryRouteAnimation: animation,
+          //         secondaryRouteAnimation: secondaryAnimation,
+          //         linearTransition: true,
+          //         child: child,
+          //       );
         },
       );
     }
